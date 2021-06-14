@@ -8,24 +8,23 @@ import * as firebase from 'firebase'
 
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
-import HomeScreen from './screens/HomeScreen'
+import DashboardScreen from './screens/DashboardScreen'
+import CreateProfileScreen from './screens/CreateProfileScreen'
 
 const Stack = createStackNavigator();
 
-const globalScreenOptions = {
-  headerStyle: { backgroundColor: '#2C6BED'},
-    headerTitleStyle: {color: 'white'},
-    headerTintColor: 'white'
-}
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions}>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Register" component={RegisterScreen}/>
-        <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="Dashboard" component={DashboardScreen}/>
+        <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+{/* <Stack.Navigator screenOptions={globalScreenOptions} ></Stack.Navigator> */}
