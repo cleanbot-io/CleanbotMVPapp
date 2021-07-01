@@ -10,6 +10,8 @@ import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import DashboardScreen from './screens/DashboardScreen'
 import CreateProfileScreen from './screens/CreateProfileScreen'
+import DatePickerScreen from './screens/DatePickerScreen'
+import MembershipScreen from './screens/MembershipScreen'
 
 const Stack = createStackNavigator();
 
@@ -21,7 +23,9 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Register" component={RegisterScreen}/>
         <Stack.Screen name="Dashboard" component={DashboardScreen}/>
+        <Stack.Screen name="DatePicker" component={DatePickerScreen}/>
         <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
+        <Stack.Screen name="Membership" component={MembershipScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

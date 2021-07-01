@@ -1,8 +1,10 @@
 import React, {useLayoutEffect, useState} from 'react'
 import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input, Button } from 'react-native-elements';
+import {Button, Input } from 'react-native-elements'
 import { StatusBar } from 'expo-status-bar'
+import { color } from 'react-native-elements/dist/helpers';
+
 
 const CreateProfileScreen = ({navigation}) => {
     const [cityAndState, setCityAndState] = useState('')
@@ -19,7 +21,7 @@ const CreateProfileScreen = ({navigation}) => {
             </Text>
 
             <View style={styles.inputContainer}>
-                <Input 
+                <Input
                     placeholder='City & State'
                     autoFocus 
                     type='text'
@@ -48,15 +50,18 @@ const CreateProfileScreen = ({navigation}) => {
                 />
                 {/* @TODO: add profile photo input  */}
             </View>
+            <View style={styles.hairline} />
 
 
             <Text style={styles.secondpart}>What's the size of your home?</Text>
 
-            <Button title='1 bd 1+ ba' />
-            <Button title='2 bd 1+ ba' />
-            <Button title='3 bd 2+ ba' />
+            <View style={styles.btns}>
+                <Button  style={styles.btnOne} title='2 bd 1+ ba' />
+                <Button  style={styles.btnTwo} title='2 bd 1+ ba' />
+                <Button style={styles.btnThree} title='3 bd 2+ ba' />
+            </View>
 
-            <Button color="#841584" title="Submit" onPress={() => navigation.navigate('Dashboard')} />
+            <Button color="#841584" type="outline" title="Submit" onPress={() => navigation.navigate('DatePicker')} />
         
         </KeyboardAvoidingView>
     )
@@ -79,6 +84,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 55,
-    }
+        marginTop: 44,
+    },
+    hairline: {
+        backgroundColor: 'black',
+        height: 2,
+        width: 341,
+        marginTop: 60,
+    },
+    btns: {
+        flex: 8,
+        justifyContent: 'space-evenly'
+    },
 })
