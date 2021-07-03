@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView } from 'react-native'
-import {Button, Input, Card, ListItem, Avatar, Icon } from 'react-native-elements'
+import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView, ScrollView } from 'react-native'
+import {Input, Card, ListItem, Avatar, Icon, Button } from 'react-native-elements'
 
 function MembershipScreen() {
     return (
@@ -12,7 +12,7 @@ function MembershipScreen() {
                     <View  styles={styles.basicCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                                <Button title="Basic"/>
+                            <Button title="Basic" type="outline"/>
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$52</Text>
                             </View>
                             <Card.Divider/>
@@ -34,7 +34,7 @@ function MembershipScreen() {
                     <View  styles={styles.standardCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                            <Button title="Standard"/>
+                                <Button title="Standard" type="outline"/>
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$94</Text>
                             </View>
                             <Card.Divider/>
@@ -56,7 +56,7 @@ function MembershipScreen() {
                     <View  styles={styles.premiumCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                            <Button title="Premium" />
+                            <Button title="Premium" type="outline"/>
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$178</Text>
                             </View>
                             <Card.Divider/>
@@ -97,4 +97,9 @@ const styles = StyleSheet.create({
     basicCard: {},
     standardCard: {},
     premiumCard: {},
+    button: {
+        alignItems: 'center',
+        backgroundColor: 'red',
+        padding: 10
+      }
 })
