@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView, ScrollView } from 'react-native'
 import {Input, Card, ListItem, Avatar, Icon, Button } from 'react-native-elements'
 
+
 function MembershipScreen() {
     return (
         <SafeAreaView styles={styles.container}>
@@ -12,7 +13,16 @@ function MembershipScreen() {
                     <View  styles={styles.basicCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                            <Button title="Basic" type="outline"/>
+                                <Button
+                                    icon={
+                                        <Icon
+                                        name="circle"
+                                        size={15}
+                                        color="blue"
+                                        style={{marginRight: 5}}
+                                        />
+                                    }title="Basic"
+                                />
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$52</Text>
                             </View>
                             <Card.Divider/>
@@ -34,7 +44,16 @@ function MembershipScreen() {
                     <View  styles={styles.standardCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                                <Button title="Standard" type="outline"/>
+                            <Button
+                                    icon={
+                                        <Icon
+                                        name="circle"
+                                        size={15}
+                                        color="red"
+                                        style={{marginRight: 5}}
+                                        />
+                                    }title="Standard"
+                                />
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$94</Text>
                             </View>
                             <Card.Divider/>
@@ -56,7 +75,14 @@ function MembershipScreen() {
                     <View  styles={styles.premiumCard}>
                         <Card borderRadius={20}>
                             <View style={{flexDirection: 'row'}}>
-                            <Button title="Premium" type="outline"/>
+                            <Button icon={
+                                        <Icon
+                                        name="circle"
+                                        size={15}
+                                        color="gold"
+                                        style={{marginRight: 5}}
+                                        />
+                                    } title="Premium"/>
                                 <Text style={{marginLeft: 15, fontSize: 36}}>$178</Text>
                             </View>
                             <Card.Divider/>
