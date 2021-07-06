@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView, ScrollVi
 import {Input, Card, ListItem, Avatar, Icon, Button } from 'react-native-elements'
 
 
-function MembershipScreen() {
+function MembershipScreen({ navigation}) {
     return (
         <SafeAreaView styles={styles.container}>
             <ScrollView>
@@ -18,7 +18,7 @@ function MembershipScreen() {
                                         <Icon
                                         name="circle"
                                         size={15}
-                                        color="blue"
+                                        color="white"
                                         style={{marginRight: 5}}
                                         />
                                     }title="Basic"
@@ -100,6 +100,11 @@ function MembershipScreen() {
                             </ListItem>
                         </Card>
                     </View>
+                </View>
+
+                <View>
+                <Button color="#841584" type="outline" title="Add Payment" onPress={() => navigation.navigate('Payment')} />
+                <Button color="#841584"  title="Dashboard" onPress={() => navigation.navigate('Dashboard')} />
                 </View>
             </ScrollView>
         </SafeAreaView>

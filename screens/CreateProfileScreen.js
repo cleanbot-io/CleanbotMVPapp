@@ -16,7 +16,7 @@ const CreateProfileScreen = ({navigation}) => {
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <StatusBar style="light"/>
 
-            <Text h3 style={{marginBottom: 50}}>
+            <Text h2 style={{marginBottom: 50, fontSize: 20}}>
                 Create your profile
             </Text>
 
@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 44,
+        marginTop: 40,
+        fontSize: 18
     },
     hairline: {
         backgroundColor: 'black',

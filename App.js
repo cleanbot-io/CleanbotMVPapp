@@ -12,6 +12,7 @@ import DashboardScreen from './screens/DashboardScreen'
 import CreateProfileScreen from './screens/CreateProfileScreen'
 import DatePickerScreen from './screens/DatePickerScreen'
 import MembershipScreen from './screens/MembershipScreen'
+import PaymentScreen from './screens/PaymentScreen'
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name="DatePicker" component={DatePickerScreen}/>
         <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
         <Stack.Screen name="Membership" component={MembershipScreen}/>
+        <Stack.Screen name="Payment" component={PaymentScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
