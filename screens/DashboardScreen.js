@@ -19,7 +19,7 @@ const DashboardScreen = ({navigation}) => {
             headerLeft: () => (
                 <View style={{marginLeft: 20}}>
                     <TouchableOpacity onPress={signOutUser} activeOpacity={0.5}>
-                        <Avatar  rounded source={{uri:'https://randomuser.me/api/portraits/men/12.jpg',}} />
+                        <Avatar  rounded source={{uri:'https://randomuser.me/api/portraits/men/12.jpg'}}/>
                         <Text style={{marginBottom: 8, marginLeft: -6, color: 'white' }}>Anthony</Text>
                     </TouchableOpacity>
                 </View>
@@ -28,33 +28,27 @@ const DashboardScreen = ({navigation}) => {
     }, [])
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <View style={{marginLeft: 220, marginTop: 10}}>
                 <Text>Today's Date</Text>
                 <Text style={{fontSize: 23, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
             </View>
 
-            <View>
-                <Card borderRadius={20}>
-                    <View style={{flexDirection: 'column', padding: 90}}>
-                        <Text style={styles.nextcleanText}>Oct 5 2021</Text>
-                        <Text style={styles.nextcleanTextTitle}>Next Clean Date</Text>
-                    </View>
+            <View borderRadius={15} style={styles.dash}>
+                <View>
+                    <Text style={styles.nextcleanText}>Oct 5 2021</Text>
+                    <Text style={styles.nextcleanTextTitle}>Next Clean Date</Text>
+                </View>
 
-                    <View>
-                        <TouchableOpacity onPress={signOutUser} activeOpacity={0.5}>
-                            <Avatar  rounded source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}}/>
-                            <Text style={{marginBottom: 8 }}>Susan Brooks</Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View>
-                        {/**  @todo implement list item with header and text */}
-                        <Text>Placeholder</Text>
-                    </View>
-                </Card>
+                <View>
+                    <TouchableOpacity onPress={signOutUser} activeOpacity={0.5} style={{marginLeft: 25}}>
+                        <Avatar rounded source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}}/>
+                    </TouchableOpacity>
+                    <Text>Susan Brooks</Text>
+                    <Text style={{fontWeight: 'bold', fontFamily: 'Marker Felt'}}>-Top Rated</Text>
+                </View>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -64,7 +58,29 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#bbcef8'
+      },
+      dash: {
+        height: '25%',
+        width: '93%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        borderRadius: 15,
+        shadowColor: 'lightgrey',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 1,
+        shadowRadius: 8,
+        elevation: 8,
+        justifyContent: 'space-between',
+        paddingLeft: 16,
+        paddingRight: 14,
+        marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
       },
       nextcleanText: {
         borderColor: "#f4f3f3",
