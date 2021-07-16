@@ -34,18 +34,26 @@ const DashboardScreen = ({navigation}) => {
                 <Text style={{fontSize: 23, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
             </View>
 
-            <View borderRadius={15} style={styles.dash}>
-                <View>
-                    <Text style={styles.nextcleanText}>Oct 5 2021</Text>
-                    <Text style={styles.nextcleanTextTitle}>Next Clean Date</Text>
+            <View borderRadius={20} style={styles.Dash}>
+                <View borderRadius={15} style={styles.SubDashWrapper}>
+                    <View>
+                        <Text style={styles.nextcleanText}>Oct 5 2021</Text>
+                        <Text style={styles.nextcleanTextTitle}>Next Clean Date</Text>
+                    </View>
+
+                    <View>
+                        <TouchableOpacity onPress={signOutUser} activeOpacity={0.5} style={{marginLeft: 25}}>
+                            <Avatar rounded source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}}/>
+                        </TouchableOpacity>
+                        <Text>Susan Brooks</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'Marker Felt'}}>-Top Rated</Text>
+                    </View>
                 </View>
 
-                <View>
-                    <TouchableOpacity onPress={signOutUser} activeOpacity={0.5} style={{marginLeft: 25}}>
-                        <Avatar rounded source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}}/>
-                    </TouchableOpacity>
-                    <Text>Susan Brooks</Text>
-                    <Text style={{fontWeight: 'bold', fontFamily: 'Marker Felt'}}>-Top Rated</Text>
+                <View style={{marginLeft: '5%', marginTop: '5%'}}>
+                    <Text style={{fontWeight: 'bold'}}>Susan's Information</Text>
+                    <Text>Ratings: 5.0</Text>
+                    <Text>Cleans Performed: 230</Text>
                 </View>
             </View>
         </View>
@@ -61,12 +69,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#bbcef8'
       },
-      dash: {
+      Dash: {
         height: '25%',
-        width: '93%',
-        alignItems: 'center',
+        width: '90%',
         justifyContent: 'center',
         backgroundColor: 'white',
+         marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
+        paddingLeft: 16,
+        paddingRight: 14,
+      },
+      SubDashWrapper: {
+        alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'row',
         borderRadius: 15,
         shadowColor: 'lightgrey',
@@ -77,10 +94,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingLeft: 16,
         paddingRight: 14,
-        marginTop: 6,
-        marginBottom: 6,
-        marginLeft: 16,
-        marginRight: 16,
       },
       nextcleanText: {
         borderColor: "#f4f3f3",
