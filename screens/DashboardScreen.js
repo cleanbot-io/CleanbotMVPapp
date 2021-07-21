@@ -1,5 +1,5 @@
 import React, {useState, useLayoutEffect} from 'react'
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import {Input, Card, ListItem, Avatar, Icon, Button } from 'react-native-elements'
 import { auth, db } from '../firebase'
 
@@ -34,7 +34,8 @@ const DashboardScreen = ({navigation}) => {
                 <Text style={{fontSize: 23, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
             </View>
 
-            <View borderRadius={20} style={styles.Dash}>
+            <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: 1 }}>Your Upcoming clean</Text>
+            <View borderRadius={20} style={styles.PrimeDash}>
                 <View borderRadius={15} style={styles.SubDashWrapper}>
                     <View>
                         <Text style={styles.nextcleanText}>Oct 5 2021</Text>
@@ -46,15 +47,49 @@ const DashboardScreen = ({navigation}) => {
                             <Avatar rounded source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}}/>
                         </TouchableOpacity>
                         <Text>Susan Brooks</Text>
-                        <Text style={{fontWeight: 'bold', fontFamily: 'Marker Felt'}}>-Top Rated</Text>
+                        <Text style={{ fontWeight: 'bold', fontFamily: 'Marker Felt'}}>-Top Rated</Text>
                     </View>
                 </View>
 
                 <View style={{marginLeft: '5%', marginTop: '5%'}}>
                     <Text style={{fontWeight: 'bold'}}>Susan's Information</Text>
-                    <Text>Ratings: 5.0</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={{marginTop: 5}}>Ratings: 4.8 -</Text>
+                        <Icon name='star' color='gold'/>
+                    </View>
                     <Text>Cleans Performed: 230</Text>
                 </View>
+            </View>
+
+            <Text style={{ fontSize: 10, marginLeft: '45%' }}>Previous Clean: Sept 20 2021</Text>
+            <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: -1 }}>Current Subscription Plan</Text>
+
+            <View style={styles.subscriptionCard} borderRadius={20}>
+                <Text style={styles.subscriptionButton}>Premium</Text>
+                <View>
+                     <View style={{flexDirection: 'row', marginBottom: 3}}>
+                        <Icon name='circle' color='white'/>
+                        <Text style={{ fontWeight: '700',color: 'white', marginLeft: 5, marginTop: 3}}>4 Cleaning Credits </Text>
+                    </View>
+                    <View style={{flexDirection: 'row', marginBottom: 3}}>
+                        <Icon name='circle' color='white'/>
+                        <Text style={{ fontWeight: '700',color: 'white', marginLeft: 5, marginTop: 3}}>2hr deep clean each visit</Text>
+                    </View>
+                    <View style={{flexDirection: 'row', marginBottom: 3}}>
+                        <Icon name='circle' color='white'/>
+                        <Text style={{ fontWeight: '700',color: 'white', marginLeft: 5, marginTop: 3}}>1 free extra</Text>
+                    </View>
+                </View>
+            </View>
+
+            <Text style={{ marginRight: '50%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: -1 }}>Payment method</Text>
+            
+            <View style={styles.paymentMethod} borderRadius={20}>
+                <View>
+                    <Text style={{color: 'white', fontWeight: '600'}}>Next Billing date</Text>
+                    <Text style={{color: 'lightgrey', fontWeight: '700', fontSize: 20}}>Nov - 3 - 2021</Text>
+                </View>
+                <Image source={require('../assets/mastercardGruop.png')} />
             </View>
         </View>
     )
@@ -69,7 +104,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#bbcef8'
       },
-      Dash: {
+      PrimeDash: {
         height: '25%',
         width: '90%',
         justifyContent: 'center',
@@ -80,17 +115,16 @@ const styles = StyleSheet.create({
         marginRight: 16,
         paddingLeft: 16,
         paddingRight: 14,
-      },
-      SubDashWrapper: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        borderRadius: 15,
         shadowColor: 'lightgrey',
         shadowOffset: {width: 0, height: 0},
         shadowOpacity: 1,
-        shadowRadius: 8,
-        elevation: 8,
+        shadowRadius: 5,
+        elevation: 7,
+      },
+      SubDashWrapper: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderRadius: 15,
         justifyContent: 'space-between',
         paddingLeft: 16,
         paddingRight: 14,
@@ -112,4 +146,52 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 10
       },
+      subscriptionCard: {
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        height: '15%',
+        width: '90%',
+        backgroundColor: '#ff4a4a',
+        marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
+        paddingLeft: 16,
+        paddingRight: 14,
+        shadowColor: 'lightgrey',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 1,
+        shadowRadius: 5,
+        elevation: 7,
+      },
+      subscriptionButton: {
+        height: '15%',
+        width: '25%',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        paddingLeft: '4%',
+        paddingTop: '3%',
+        paddingBottom: '7%',
+        paddingRight: '4%',
+      },
+      paymentMethod: {
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        height: '15%',
+        width: '90%',
+        backgroundColor: '#5229e0',
+        marginTop: 6,
+        marginBottom: 6,
+        marginLeft: 16,
+        marginRight: 16,
+        paddingLeft: 16,
+        paddingRight: 14,
+        shadowColor: 'lightgrey',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 1,
+        shadowRadius: 5,
+        elevation: 7,
+      }
 })
