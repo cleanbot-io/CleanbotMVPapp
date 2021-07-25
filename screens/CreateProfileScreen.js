@@ -56,7 +56,7 @@ const CreateProfileScreen = ({navigation}) => {
             <Text style={styles.secondpart}>What's the size of your home?</Text>
 
             <View style={styles.btns}>
-                <Button  style={styles.btnOne} title='2 bd 1+ ba' />
+                <Button  style={styles.btnOne} title='1 bd 1+ ba' />
                 <Button  style={styles.btnTwo} title='2 bd 1+ ba' />
                 <Button style={styles.btnThree} title='3 bd 2+ ba' />
             </View>

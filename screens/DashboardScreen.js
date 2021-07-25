@@ -31,7 +31,7 @@ const DashboardScreen = ({navigation}) => {
         <View style={styles.container}>
             <View style={{marginLeft: 220, marginTop: 10}}>
                 <Text>Today's Date</Text>
-                <Text style={{fontSize: 23, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
+                <Text style={{ fontSize: 25, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
             </View>
 
             <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: 1 }}>Your Upcoming clean</Text>
@@ -58,14 +58,20 @@ const DashboardScreen = ({navigation}) => {
                         <Icon name='star' color='gold'/>
                     </View>
                     <Text>Cleans Performed: 230</Text>
+                    <Text style={{marginTop: 2}}>83 Reviews</Text>
                 </View>
             </View>
 
-            <Text style={{ fontSize: 10, marginLeft: '45%' }}>Previous Clean: Sept 20 2021</Text>
+            <View style={{flexDirection: 'row', marginLeft: 180}}>
+                <Text style={{fontSize: 10}}>Previous clean</Text>
+                <Text style={{ color: 'white',fontSize: 11, textDecorationLine: 'underline'}}> Sept 20 2021</Text>
+            </View>
             <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: -1 }}>Current Subscription Plan</Text>
 
             <View style={styles.subscriptionCard} borderRadius={20}>
-                <Text style={styles.subscriptionButton}>Premium</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Membership')} borderRadius={20}>
+                    <Text style={styles.subscriptionButton}>Premium</Text>
+                </TouchableOpacity>
                 <View>
                      <View style={{flexDirection: 'row', marginBottom: 3}}>
                         <Icon name='circle' color='white'/>
@@ -89,7 +95,9 @@ const DashboardScreen = ({navigation}) => {
                     <Text style={{color: 'white', fontWeight: '600'}}>Next Billing date</Text>
                     <Text style={{color: 'lightgrey', fontWeight: '700', fontSize: 20}}>Nov - 3 - 2021</Text>
                 </View>
-                <Image source={require('../assets/mastercardGruop.png')} />
+                <TouchableOpacity onPress={() => navigation.navigate('Payment')}>
+                    <Image source={require('../assets/mastercardGruop.png')} />
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -166,14 +174,14 @@ const styles = StyleSheet.create({
         elevation: 7,
       },
       subscriptionButton: {
-        height: '15%',
-        width: '25%',
+        height: 40,
+        width: 85,
         justifyContent: 'center',
         backgroundColor: 'white',
         paddingLeft: '4%',
         paddingTop: '3%',
-        paddingBottom: '7%',
-        paddingRight: '4%',
+        paddingBottom: '8%',
+        paddingRight: '5%',
       },
       paymentMethod: {
         alignItems: 'center',

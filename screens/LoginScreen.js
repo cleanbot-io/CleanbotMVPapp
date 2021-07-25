@@ -5,7 +5,7 @@ import { KeyboardAvoidingView} from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 
 import { auth } from '../firebase'
-import logo from '../assets/cordova_512.png'
+import logo from '../assets/cblogo.png'
 
 const LoginScreen = ({navigation}) => {
     const [email, setEmail] = useState('')

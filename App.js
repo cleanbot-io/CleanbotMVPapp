@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import * as firebase from 'firebase'
+import { StripeProvider } from '@stripe/stripe-react-native';
 
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
@@ -18,18 +19,22 @@ const Stack = createStackNavigator();
 
 
 export default function App() {
+  const publishableKey = 'pk_test_51JBV77Bx3sk3b5mAVAw5Zdo4LgAb7PAeW68BAlOr3uXSNCUD2ZSE14qpGzYU3saAv3r8VaBo58tgy4C6J4QqEYdQ00RVutqzQV';
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen}/>
-        <Stack.Screen name="Register" component={RegisterScreen}/>
-        <Stack.Screen name="Dashboard" component={DashboardScreen}/>
-        <Stack.Screen name="DatePicker" component={DatePickerScreen}/>
-        <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
-        <Stack.Screen name="Membership" component={MembershipScreen}/>
-        <Stack.Screen name="Payment" component={PaymentScreen}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <StripeProvider publishableKey={publishableKey}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={LoginScreen}/>
+          <Stack.Screen name="Register" component={RegisterScreen}/>
+          <Stack.Screen name="Dashboard" component={DashboardScreen}/>
+          <Stack.Screen name="DatePicker" component={DatePickerScreen}/>
+          <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
+          <Stack.Screen name="Membership" component={MembershipScreen}/>
+          <Stack.Screen name="Payment" component={PaymentScreen}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </StripeProvider>
   );
 }
 
