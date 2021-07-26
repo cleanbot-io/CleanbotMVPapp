@@ -35,33 +35,33 @@ const DatePickerScreen = ({navigation}) => {
         <KeyboardAvoidingView behavior='padding'>
             <View style={{justifyContent: 'center'}}>
                 <Text style={{ alignSelf: 'center', fontSize: 18, marginTop: 30, marginBottom: 40}}>How often would you like a cleaner</Text>
-                <View style={{alignSelf: 'baseline', flexDirection: 'row'}}>
-                    <Button type="outline" title='Biweekly' style={{marginLeft: '15%',marginRight: 15}} />
-                    <Button type="outline" style={{marginRight: 15}} title='Weekly' />
-                    <Button type="outline" style={{marginRight: 15}} title='Monthly' />
+
+                <View style={styles.btnz}>
+                    <Button type="outline" title='Weekly' />
+                    <Button type="outline" title='Biweekly' />
+                    <Button type="outline" title='Monthly' />
                 </View>
 
                 <View style={styles.hairline} />
-                <View>
-                    <Button style={{marginBottom: '1%'}} onPress={showDatepicker} title="Show date picker!" />
-                </View>
 
-                <View>
-                    <Button style={{marginBottom: '2%'}} onPress={showTimepicker} title="Show time picker!" />
-                </View>
+                <Button style={{alignSelf: 'center'}} onPress={showDatepicker} title="Show date picker!" />
+                <Button style={{alignSelf: 'center'}} onPress={showTimepicker} title="Show time picker!" />
                 
-                {show && (
-                    <DateTimePicker
-                    testID="dateTimePicker"
-                    value={date}
-                    mode={mode}
-                    is24Hour={true}
-                    display="default"
-                    onChange={onChange}
-                    />
-                )}
+                <View style={{marginLeft: '38%', marginTop: '5%'}}>
+                    {show && (
+                        <DateTimePicker
+                        testID="dateTimePicker"
+                        value={date}
+                        mode={mode}
+                        is24Hour={true}
+                        display="default"
+                        onChange={onChange}
+                        />
+                    )}
+                </View>
 
-                <Button style={{marginTop: '12%'}} title='next' onPress={() => navigation.navigate('Membership')} />
+                <Button style={{
+                    alignSelf: 'center', marginTop: '10%'}} title='next  ' onPress={() => navigation.navigate('Membership')} />
             </View>
         </KeyboardAvoidingView>
     )
@@ -79,5 +79,9 @@ const styles = StyleSheet.create({
         marginRight: '10%',
         marginLeft: '5%',
     },
-    often: {}
+    often: {},
+    btnz: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    }
 })

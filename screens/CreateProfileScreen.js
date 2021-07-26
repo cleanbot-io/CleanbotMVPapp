@@ -61,7 +61,7 @@ const CreateProfileScreen = ({navigation}) => {
                 <Button style={styles.btnThree} title='3 bd 2+ ba' />
             </View>
 
-            <Button color="#841584" type="outline" title="Submit" onPress={() => navigation.navigate('DatePicker')} />
+            <Button style={{marginBottom: 30}} type="outline" title="Submit" onPress={() => navigation.navigate('DatePicker')} />
         
         </KeyboardAvoidingView>
     )

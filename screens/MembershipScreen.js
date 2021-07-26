@@ -23,20 +23,26 @@ function MembershipScreen({ navigation}) {
                                         />
                                     }title="Basic"
                                 />
-                                <Text style={{marginLeft: 15, fontSize: 36}}>$52</Text>
+                                <Text style={{marginLeft: 15, fontSize: 36}}>$60</Text>
                             </View>
                             <Card.Divider/>
                             <ListItem>
-                                <Text>Features</Text>
+                                <Text style={{fontSize: 20}}>1 Cleaning Credit</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>2 hour deep clean</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Bathroom and Bedroom</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Kitchen cleaning</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Clean all floor surfaces</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Wash dishes + Empty trash</Text>
                             </ListItem>
                         </Card>
                     </View>
@@ -58,16 +64,22 @@ function MembershipScreen({ navigation}) {
                             </View>
                             <Card.Divider/>
                             <ListItem>
-                                <Text>Features</Text>
+                                <Text style={{fontSize: 20}}>2 cleaning credits</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>2 hour deep clean</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Bathroom and Bedroom</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Kitchen cleaning</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Clean all floor surfaces</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Wash dishes + Empty trash</Text>
                             </ListItem>
                         </Card>
                     </View>
@@ -87,24 +99,30 @@ function MembershipScreen({ navigation}) {
                             </View>
                             <Card.Divider/>
                             <ListItem>
-                                <Text>Features</Text>
+                                <Text style={{fontSize: 20}}>4 cleaning credits</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>2 hour deep clean</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Bathroom and Bedroom</Text>
                             </ListItem>
                             <ListItem>
-                                <Icon name='check'/><Text>Four cleanings per month</Text>
+                                <Icon name='check'/><Text>Kitchen cleaning</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Clean all floor surfaces</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Icon name='check'/><Text>Wash dishes + Empty trash</Text>
                             </ListItem>
                         </Card>
                     </View>
                 </View>
 
                 <View>
-                <Button color="#841584" type="outline" title="Add Payment" onPress={() => navigation.navigate('Payment')} />
-                <Button color="#841584"  title="Dashboard" onPress={() => navigation.navigate('Dashboard')} />
+                <Button style={{marginTop: 20, alignSelf: 'center'}} color="#841584" type="outline" title="Add Payment" onPress={() => navigation.navigate('Payment')} />
+                <Button style={{marginTop: 9, alignSelf: 'center'}} color="#841584"  title="  Dashboard  " onPress={() => navigation.navigate('Dashboard')} />
                 </View>
             </ScrollView>
         </SafeAreaView>
