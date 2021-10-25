@@ -6,7 +6,7 @@ import { auth, db } from '../firebase'
 const DashboardScreen = ({navigation}) => {
     const signOutUser = () => {
         auth.signOut().then(() => {
-            navigation.replace('Login')
+            navigation.navigate('Login')
         });
     }
 
@@ -34,7 +34,7 @@ const DashboardScreen = ({navigation}) => {
                 <Text style={{ fontSize: 25, color: 'white', fontWeight: 'bold'}}>Sat Oct 1</Text>
             </View>
 
-            <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: 1 }}>Your Upcoming clean</Text>
+            <Text style={{ marginRight: '41%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: 1 }}>Your Upcoming clean</Text>
             <View borderRadius={20} style={styles.PrimeDash}>
                 <View borderRadius={15} style={styles.SubDashWrapper}>
                     <View>
@@ -62,9 +62,9 @@ const DashboardScreen = ({navigation}) => {
                 </View>
             </View>
 
-            <View style={{flexDirection: 'row', marginLeft: 180}}>
-                <Text style={{fontSize: 10}}>Previous clean</Text>
-                <Text style={{ color: 'white',fontSize: 11, textDecorationLine: 'underline'}}> Sept 20 2021</Text>
+            <View style={{marginLeft: 145, flexDirection: 'row'}}>
+                <Text style={{fontSize: 12}}>Previous clean</Text>
+                <Text style={{ color: 'white',fontSize: 12, textDecorationLine: 'underline'}}> Sept 20 2021</Text>
             </View>
             <Text style={{ marginRight: '35%', marginTop: 30, color: '#9aaae1', fontWeight: 'bold', marginBottom: -1 }}>Current Subscription Plan</Text>
 
@@ -98,6 +98,11 @@ const DashboardScreen = ({navigation}) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Payment')}>
                     <Image source={require('../assets/mastercardGruop.png')} />
                 </TouchableOpacity>
+            </View>
+
+            <View style={styles.buttonz}>
+                <Button style={{marginRight: 20}} onPress={() => navigation.navigate('Schedule')} title='Schedule' />
+                <Button onPress={() => navigation.navigate('Payment')} title='Wallet' />
             </View>
         </View>
     )
@@ -201,5 +206,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         shadowRadius: 5,
         elevation: 7,
+      },
+      buttonz: {
+          flex: 1,
+          marginTop: 20,
+          flexDirection: 'row',
+          justifyContent: 'space-between'
       }
 })

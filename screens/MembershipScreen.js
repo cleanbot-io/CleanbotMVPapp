@@ -121,8 +121,8 @@ function MembershipScreen({ navigation}) {
                 </View>
 
                 <View>
-                <Button style={{marginTop: 20, alignSelf: 'center'}} color="#841584" type="outline" title="Add Payment" onPress={() => navigation.navigate('Payment')} />
-                <Button style={{marginTop: 9, alignSelf: 'center'}} color="#841584"  title="  Dashboard  " onPress={() => navigation.navigate('Dashboard')} />
+                    <Button style={{marginTop: 20, alignSelf: 'center'}} color="#841584" type="outline" title="Wallet    " onPress={() => navigation.navigate('Payment')} />
+                    <Button style={{marginTop: 9, alignSelf: 'center'}} color="#841584"  title="Dashboard" onPress={() => navigation.navigate('Dashboard')} />
                 </View>
             </ScrollView>
         </SafeAreaView>

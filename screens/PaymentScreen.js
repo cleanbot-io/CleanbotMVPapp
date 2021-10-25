@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Button, View} from 'react-native';
+import { StyleSheet, Button, View, Text} from 'react-native';
 import {
   CardField,
   CardFieldInput,
@@ -9,7 +9,7 @@ import {
 export default PaymentScreen = () => {
   const [card, setCard] = useState(CardFieldInput.Details | null);
   const { confirmPayment, handleCardAction } = useStripe()
-  const API_URL = "http://localhost:8000";
+  const API_URL = "http://192.168.1.10:8000";
   const { initPaymentSheet, presentPaymentSheet } = useStripe();
   const [loading, setLoading] = useState(false);
 
@@ -55,6 +55,7 @@ export default PaymentScreen = () => {
   }, []);
   return (
     <View style={styles.container}>
+      <Text style={{fontSize: 25, alignSelf: 'center'}}>Wallet</Text>
       <CardField
         postalCodeEnabled={false}
         placeholder={{

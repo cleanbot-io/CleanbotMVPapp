@@ -34,7 +34,7 @@ const DatePickerScreen = ({navigation}) => {
     return (
         <KeyboardAvoidingView behavior='padding'>
             <View style={{justifyContent: 'center'}}>
-                <Text style={{ alignSelf: 'center', fontSize: 18, marginTop: 30, marginBottom: 40}}>How often would you like a cleaner</Text>
+                <Text style={{fontFamily: 'Arial Rounded MT Bold', alignSelf: 'center', fontSize: 18, marginTop: 30, marginBottom: 40}}>How often would you like a cleaner</Text>
 
                 <View style={styles.btnz}>
                     <Button type="outline" title='Weekly' />
@@ -44,10 +44,11 @@ const DatePickerScreen = ({navigation}) => {
 
                 <View style={styles.hairline} />
 
+                <Text style={{alignSelf: 'center', fontSize: 18, marginBottom: 40, fontFamily: 'Arial Rounded MT Bold'}}>choose a date for your first clean</Text>
                 <Button style={{alignSelf: 'center'}} onPress={showDatepicker} title="Show date picker!" />
-                <Button style={{alignSelf: 'center'}} onPress={showTimepicker} title="Show time picker!" />
+                <Button style={{alignSelf: 'center', marginTop: 9}} onPress={showTimepicker} title="Show time picker!" />
                 
-                <View style={{marginLeft: '38%', marginTop: '5%'}}>
+                <View style={{marginLeft: '35%', marginTop: '5%'}}>
                     {show && (
                         <DateTimePicker
                         testID="dateTimePicker"
@@ -61,7 +62,7 @@ const DatePickerScreen = ({navigation}) => {
                 </View>
 
                 <Button style={{
-                    alignSelf: 'center', marginTop: '10%'}} title='next  ' onPress={() => navigation.navigate('Membership')} />
+                    alignSelf: 'center', marginTop: '8%'}} title='next  ' onPress={() => navigation.navigate('Membership')} />
             </View>
         </KeyboardAvoidingView>
     )

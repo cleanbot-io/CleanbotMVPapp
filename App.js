@@ -3,7 +3,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import 'react-native-gesture-handler';
 import * as firebase from 'firebase'
 import { StripeProvider } from '@stripe/stripe-react-native';
 
@@ -14,6 +13,7 @@ import CreateProfileScreen from './screens/CreateProfileScreen'
 import DatePickerScreen from './screens/DatePickerScreen'
 import MembershipScreen from './screens/MembershipScreen'
 import PaymentScreen from './screens/PaymentScreen'
+import ScheduleScreen from './screens/ScheduleScreen'
 
 const Stack = createStackNavigator();
 
@@ -29,9 +29,10 @@ export default function App() {
           <Stack.Screen name="Register" component={RegisterScreen}/>
           <Stack.Screen name="Dashboard" component={DashboardScreen}/>
           <Stack.Screen name="DatePicker" component={DatePickerScreen}/>
-          <Stack.Screen name="CreateProfile" component={CreateProfileScreen}/>
+          <Stack.Screen name="CreateProfile" component={CreateProfileScreen} options={{title: 'Create your profile'}}/>
           <Stack.Screen name="Membership" component={MembershipScreen}/>
           <Stack.Screen name="Payment" component={PaymentScreen}/>
+          <Stack.Screen name="Schedule" component={ScheduleScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </StripeProvider>

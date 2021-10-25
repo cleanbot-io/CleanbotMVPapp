@@ -16,14 +16,9 @@ const CreateProfileScreen = ({navigation}) => {
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <StatusBar style="light"/>
 
-            <Text h2 style={{marginBottom: 50, fontSize: 20}}>
-                Create your profile
-            </Text>
-
             <View style={styles.inputContainer}>
                 <Input
                     placeholder='City & State'
-                    autoFocus 
                     type='text'
                     value={cityAndState}
                     onChangeText={(text) => setCityAndState(text)}
