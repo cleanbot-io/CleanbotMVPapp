@@ -8,11 +8,12 @@ const Schedule = () => {
             <Text style={{fontFamily: 'Helvetica-Bold', marginTop: 15, fontSize: 26, color: 'black'}}>My Cleaning Schedule</Text>
 
             <Text style={styles.time}>9:30am on Oct 5</Text>
-            <Text style={{fontSize: 16}}>Is your next clean</Text>
+            <Text style={{fontSize: 18}}>- Is your next clean -</Text>
 
             <View style={{marginTop: 20}}>
-                <Button title='Choose Date' style={styles.btns} />
+                {/* @todo: show choose date if one isn't planned. <Button title='Choose Date' style={styles.btns} /> */}
                 <Button title='Change Schedule' style={styles.btns}/>
+                <Button title='Cancel Next Clean' style={styles.btns} />
             </View>
         </View>
     )

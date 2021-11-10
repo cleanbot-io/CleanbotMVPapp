@@ -44,7 +44,6 @@ const DatePickerScreen = ({navigation}) => {
 
                 <View style={styles.hairline} />
 
-                <Text style={{alignSelf: 'center', fontSize: 18, marginBottom: 40, fontFamily: 'Arial Rounded MT Bold'}}>choose a date for your first clean</Text>
                 <Button style={{alignSelf: 'center'}} onPress={showDatepicker} title="Show date picker!" />
                 <Button style={{alignSelf: 'center', marginTop: 9}} onPress={showTimepicker} title="Show time picker!" />
                 
