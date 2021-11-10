@@ -14,6 +14,7 @@ import DatePickerScreen from './screens/DatePickerScreen'
 import MembershipScreen from './screens/MembershipScreen'
 import PaymentScreen from './screens/PaymentScreen'
 import ScheduleScreen from './screens/ScheduleScreen'
+import SchedulerDatePickerScreen from './screens/SchedulerDatePickerScreen'
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
           <Stack.Screen name="Membership" component={MembershipScreen}/>
           <Stack.Screen name="Payment" component={PaymentScreen}/>
           <Stack.Screen name="Schedule" component={ScheduleScreen}/>
+          <Stack.Screen name="SchedulerDP" component={SchedulerDatePickerScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </StripeProvider>
