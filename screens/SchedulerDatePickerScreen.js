@@ -16,6 +16,7 @@ const SchedulerDatePicker = ({navigation}) => {
      const currentDate = selectedDate || date;
      setShow(Platform.OS === 'ios');
      setDate(currentDate);
+    //  console.log('-----' + date + '-----')
      };
 
      const showMode = (currentMode) => {
@@ -51,7 +52,7 @@ const SchedulerDatePicker = ({navigation}) => {
                         />
                     )}
                 </View>
-
+                {/* in the onPress send the "date" state into a collection to save it:  */}
                 <Button style={{
                     alignSelf: 'center', marginTop: '8%'}} title='Done  ' onPress={() => navigation.navigate('Schedule')} />
             </View>
