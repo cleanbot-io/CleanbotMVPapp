@@ -1,4 +1,4 @@
-# Cleanbot MVP client side
+## React Native MVP app for consumers/users
 
 ## temporary place for notes
 Schedule screen notes:
